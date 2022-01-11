@@ -2,6 +2,6 @@
 
 class_Eth Eth;
 
-void class_Eth::InitFunction(void){
+FUNC(void, ETH_CODE) class_Eth::InitFunction(void){
 }
 

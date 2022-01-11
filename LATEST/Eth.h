@@ -4,7 +4,7 @@
 
 class class_Eth{
    public:
-      void InitFunction(void);
+      FUNC(void, ETH_CODE) InitFunction(void);
 };
 
 extern class_Eth Eth;
