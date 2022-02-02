@@ -8,6 +8,8 @@
 /*****************************************************/
 #include "Eth.h"
 
+#include "Eth_EcuM.h"
+
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -32,11 +34,13 @@
 /* OBJECTS                                           */
 /*****************************************************/
 class_Eth Eth;
+class_Eth_EcuM Eth_EcuM;
+class_Eth_EcuM *Eth_EcuM_ptr = &Eth_EcuM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, ETH_CODE) class_Eth::InitFunction(void){
+FUNC(void, ETH_CODE) class_Eth_EcuM::InitFunction(void){
 }
 
 FUNC(void, ETH_CODE) class_Eth::GetControllerMode(void){
