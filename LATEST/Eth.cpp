@@ -33,9 +33,9 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Eth Eth;
 class_Eth_EcuM Eth_EcuM;
-class_Eth_EcuM *Eth_EcuM_ptr = &Eth_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_Eth = &Eth_EcuM;
+class_Eth Eth;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

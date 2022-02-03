@@ -41,7 +41,7 @@ class class_Eth_EcuM : public class_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Eth_EcuM *Eth_EcuM_ptr;
+extern class_EcuM_Client *EcuM_Client_ptr_Eth;
 
 /*****************************************************/
 /* EOF                                               */
