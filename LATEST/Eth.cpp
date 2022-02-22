@@ -6,9 +6,10 @@
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Eth.h"
-
+#include "module.h"
 #include "Eth_EcuM.h"
+#include "Eth_SchM.h"
+#include "Eth_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,6 +22,16 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class module_Eth:
+      public abstract_module
+   ,  public interface_Eth_EcuM
+   ,  public interface_Eth_SchM
+{
+   public:
+      FUNC(void, ETH_CODE) InitFunction   (void);
+      FUNC(void, ETH_CODE) DeInitFunction (void);
+      FUNC(void, ETH_CODE) MainFunction   (void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -33,77 +44,81 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Eth_EcuM Eth_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_Eth = &Eth_EcuM;
-class_Eth Eth;
+module_Eth Eth;
+
+interface_Eth_EcuM *EcuM_Client_ptr_Eth = &Eth;
+interface_Eth_SchM *SchM_Client_ptr_Eth = &Eth;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, ETH_CODE) class_Eth_EcuM::InitFunction(void){
+FUNC(void, ETH_CODE) module_Eth::InitFunction(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::GetControllerMode(void){
+FUNC(void, ETH_CODE) module_Eth::DeInitFunction(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::SetControllerMode(void){
+FUNC(void, ETH_CODE) module_Eth::MainFunction(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::GetPhysAddr(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::GetControllerMode(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::SetPhysAddr(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::SetControllerMode(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::UpdatePhysAddrFilter(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::GetPhysAddr(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::ReadMii(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::SetPhysAddr(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::WriteMii(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::UpdatePhysAddrFilter(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::GetCounterValues(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::ReadMii(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::GetRxStatus(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::WriteMii(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::GetTxStatus(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::GetCounterValues(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::GetTxErrorCounterValues(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::GetRxStatus(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::GetCurrentTime(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::GetTxStatus(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::EnableEgressTimeStamp(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::GetTxErrorCounterValues(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::GetEgressTimeStamp(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::GetCurrentTime(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::GetIngressTimeStamp(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::EnableEgressTimeStamp(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::ProvideTxBuffer(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::GetEgressTimeStamp(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::Transit(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::GetIngressTimeStamp(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::Recive(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::ProvideTxBuffer(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::TxConfirmation(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::Transit(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::GetVersionInfo(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::Recive(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth::MainFunction(void){
+FUNC(void, ETH_CODE) class_Eth_Unused::TxConfirmation(void){
+}
+
+FUNC(void, ETH_CODE) class_Eth_Unused::GetVersionInfo(void){
 }
 
 /*****************************************************/

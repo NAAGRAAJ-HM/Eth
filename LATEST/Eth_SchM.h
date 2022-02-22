@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : Eth_EcuM.h                               */
+/* File   : Eth_SchM.h                               */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -9,7 +9,7 @@
 /*****************************************************/
 #include "Compiler_Cfg_Eth.h"
 
-#include "EcuM_Client.h"
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,13 +22,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_Eth_EcuM : public interface_EcuM_Client{
+class interface_Eth_SchM : public interface_SchM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, ETH_CODE) InitFunction   (void);
-      FUNC(void, ETH_CODE) DeInitFunction (void);
+      FUNC(void, ETH_CODE) MainFunction(void);
 };
 
 /*****************************************************/
@@ -42,7 +41,7 @@ class interface_Eth_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Eth_EcuM *EcuM_Client_ptr_Eth;
+extern interface_Eth_SchM *SchM_Client_ptr_Eth;
 
 /*****************************************************/
 /* EOF                                               */

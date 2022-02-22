@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : Eth.h                                    */
+/* File   : Eth_Unused.h                             */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -21,7 +21,7 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_Eth{
+class class_Eth_Unused{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -46,7 +46,6 @@ class class_Eth{
       FUNC(void, ETH_CODE) Recive                  (void);
       FUNC(void, ETH_CODE) TxConfirmation          (void);
       FUNC(void, ETH_CODE) GetVersionInfo          (void);
-      FUNC(void, ETH_CODE) MainFunction            (void);
 };
 
 /*****************************************************/
@@ -60,7 +59,7 @@ class class_Eth{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Eth Eth;
+//extern class_Eth Eth;
 
 /*****************************************************/
 /* EOF                                               */
