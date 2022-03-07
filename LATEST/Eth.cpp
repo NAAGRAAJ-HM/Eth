@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_Eth:
       public abstract_module
-   ,  public interface_Eth_EcuM
-   ,  public interface_Eth_SchM
 {
    public:
       FUNC(void, ETH_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_Eth:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_Eth Eth;
-
-interface_Eth_EcuM *EcuM_Client_ptr_Eth = &Eth;
-interface_Eth_SchM *SchM_Client_ptr_Eth = &Eth;
+module_Eth     Eth;
+infEcuMClient* gptrinfEcuMClient_Eth = &Eth;
+infSchMClient* gptrinfSchMClient_Eth = &Eth;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
