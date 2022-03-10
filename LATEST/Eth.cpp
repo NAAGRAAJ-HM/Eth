@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "Eth_EcuM.h"
-#include "Eth_SchM.h"
+#include "infEth_EcuM.h"
+#include "infEth_SchM.h"
 #include "Eth_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_Eth:
    public:
       FUNC(void, ETH_CODE) InitFunction   (void);
       FUNC(void, ETH_CODE) DeInitFunction (void);
+      FUNC(void, ETH_CODE) GetVersionInfo (void);
       FUNC(void, ETH_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_Eth:
 /*****************************************************/
 module_Eth     Eth;
 infEcuMClient* gptrinfEcuMClient_Eth = &Eth;
+infDcmClient*  gptrinfDcmClient_Eth  = &Eth;
 infSchMClient* gptrinfSchMClient_Eth = &Eth;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, ETH_CODE) module_Eth::InitFunction(void){
 }
 
 FUNC(void, ETH_CODE) module_Eth::DeInitFunction(void){
+}
+
+FUNC(void, ETH_CODE) module_Eth::GetVersionInfo(void){
 }
 
 FUNC(void, ETH_CODE) module_Eth::MainFunction(void){
