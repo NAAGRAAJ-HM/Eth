@@ -8,8 +8,8 @@
 /*****************************************************/
 #include "module.h"
 #include "infEth_EcuM.h"
+#include "infEth_Dcm.h"
 #include "infEth_SchM.h"
-#include "Eth_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -62,6 +62,8 @@ FUNC(void, ETH_CODE) module_Eth::GetVersionInfo(void){
 
 FUNC(void, ETH_CODE) module_Eth::MainFunction(void){
 }
+
+#include "Eth_Unused.h"
 
 FUNC(void, ETH_CODE) class_Eth_Unused::GetControllerMode(void){
 }
@@ -118,9 +120,6 @@ FUNC(void, ETH_CODE) class_Eth_Unused::Recive(void){
 }
 
 FUNC(void, ETH_CODE) class_Eth_Unused::TxConfirmation(void){
-}
-
-FUNC(void, ETH_CODE) class_Eth_Unused::GetVersionInfo(void){
 }
 
 /*****************************************************/
