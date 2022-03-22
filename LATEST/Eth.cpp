@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infEth_Version.h"
+#include "Eth_Cfg.h"
 #include "infEth_EcuM.h"
 #include "infEth_Dcm.h"
 #include "infEth_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define ETH_AR_RELEASE_MAJOR_VERSION                                           4
+#define ETH_AR_RELEASE_MINOR_VERSION                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(ETH_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible ETH_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(ETH_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible ETH_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, ETH_CODE) module_Eth::DeInitFunction(void){
 }
 
 FUNC(void, ETH_CODE) module_Eth::GetVersionInfo(void){
+#if(STD_ON == Eth_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, ETH_CODE) module_Eth::MainFunction(void){
