@@ -40,6 +40,16 @@ class module_Eth:
       FUNC(void, ETH_CODE) DeInitFunction (void);
       FUNC(void, ETH_CODE) GetVersionInfo (void);
       FUNC(void, ETH_CODE) MainFunction   (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, ETH_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/
