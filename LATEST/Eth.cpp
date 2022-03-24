@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "Eth_Cfg.h"
+#include "CfgEth.h"
 #include "infEth_EcuM.h"
 #include "infEth_Dcm.h"
 #include "infEth_SchM.h"
