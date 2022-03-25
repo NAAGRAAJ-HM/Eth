@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgEth.h"
-#include "infEth_EcuM.h"
-#include "infEth_Dcm.h"
-#include "infEth_SchM.h"
+#include "module.hpp"
+#include "CfgEth.hpp"
+#include "infEth_EcuM.hpp"
+#include "infEth_Dcm.hpp"
+#include "infEth_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, ETH_CODE) module_Eth::GetVersionInfo(void){
 FUNC(void, ETH_CODE) module_Eth::MainFunction(void){
 }
 
-#include "Eth_Unused.h"
+#include "Eth_Unused.hpp"
 
 FUNC(void, ETH_CODE) class_Eth_Unused::GetControllerMode(void){
 }
