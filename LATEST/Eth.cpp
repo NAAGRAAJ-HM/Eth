@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgEth.hpp"
 #include "infEth_EcuM.hpp"
 #include "infEth_Dcm.hpp"
 #include "infEth_SchM.hpp"
@@ -36,37 +35,40 @@ class module_Eth:
       public abstract_module
 {
    public:
+      module_Eth(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, ETH_CODE) InitFunction   (void);
       FUNC(void, ETH_CODE) DeInitFunction (void);
-      FUNC(void, ETH_CODE) GetVersionInfo (void);
       FUNC(void, ETH_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, ETH_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_Eth, ETH_VAR) Eth;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, ETH_VAR, ETH_CONST) gptrinfEcuMClient_Eth = &Eth;
+CONSTP2VAR(infDcmClient,  ETH_VAR, ETH_CONST) gptrinfDcmClient_Eth  = &Eth;
+CONSTP2VAR(infSchMClient, ETH_VAR, ETH_CONST) gptrinfSchMClient_Eth = &Eth;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgEth.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_Eth, ETH_VAR) Eth;
-CONSTP2VAR(infEcuMClient, ETH_VAR, ETH_CONST) gptrinfEcuMClient_Eth = &Eth;
-CONSTP2VAR(infDcmClient,  ETH_VAR, ETH_CONST) gptrinfDcmClient_Eth  = &Eth;
-CONSTP2VAR(infSchMClient, ETH_VAR, ETH_CONST) gptrinfSchMClient_Eth = &Eth;
+VAR(module_Eth, ETH_VAR) Eth(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, ETH_CODE) module_Eth::InitFunction(void){
 
 FUNC(void, ETH_CODE) module_Eth::DeInitFunction(void){
    Eth.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, ETH_CODE) module_Eth::GetVersionInfo(void){
-#if(STD_ON == Eth_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, ETH_CODE) module_Eth::MainFunction(void){
