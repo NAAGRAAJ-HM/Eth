@@ -37,10 +37,9 @@ class module_Eth:
    public:
       module_Eth(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, ETH_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, ETH_CONFIG_DATA, ETH_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, ETH_CODE) InitFunction   (void);
       FUNC(void, ETH_CODE) DeInitFunction (void);
       FUNC(void, ETH_CODE) MainFunction   (void);
 };
@@ -77,23 +76,39 @@ VAR(module_Eth, ETH_VAR) Eth(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, ETH_CODE) module_Eth::InitFunction(
-   CONSTP2CONST(CfgEth_Type, CFGETH_CONFIG_DATA, CFGETH_APPL_CONST) lptrCfgEth
+   CONSTP2CONST(CfgModule_TypeAbstract, ETH_CONFIG_DATA, ETH_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgEth){
+   if(E_OK == IsInitDone){
 #if(STD_ON == Eth_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgEth for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == Eth_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_Eth as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   Eth.IsInitDone = E_OK;
 }
 
 FUNC(void, ETH_CODE) module_Eth::DeInitFunction(void){
-   Eth.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == Eth_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, ETH_CODE) module_Eth::MainFunction(void){
