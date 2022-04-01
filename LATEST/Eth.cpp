@@ -78,6 +78,7 @@ VAR(module_Eth, ETH_VAR) Eth(
 FUNC(void, ETH_CODE) module_Eth::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, ETH_CONFIG_DATA, ETH_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == Eth_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == Eth_DevErrorDetect)
       Det_ReportError(
@@ -85,6 +86,7 @@ FUNC(void, ETH_CODE) module_Eth::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Eth_DevErrorDetect)
          Det_ReportError(
@@ -96,10 +98,13 @@ FUNC(void, ETH_CODE) module_Eth::InitFunction(
 // use PBcfg_Eth as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == Eth_InitCheck)
    }
+#endif
 }
 
 FUNC(void, ETH_CODE) module_Eth::DeInitFunction(void){
+#if(STD_ON == Eth_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == Eth_DevErrorDetect)
       Det_ReportError(
@@ -107,11 +112,26 @@ FUNC(void, ETH_CODE) module_Eth::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == Eth_InitCheck)
    }
+#endif
 }
 
 FUNC(void, ETH_CODE) module_Eth::MainFunction(void){
+#if(STD_ON == Eth_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == Eth_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == Eth_InitCheck)
+   }
+#endif
 }
 
 class class_Eth_Unused{
