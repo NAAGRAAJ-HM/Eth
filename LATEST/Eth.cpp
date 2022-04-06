@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define ETH_AR_RELEASE_MAJOR_VERSION                                           4
-#define ETH_AR_RELEASE_MINOR_VERSION                                           3
+#define ETH_AR_RELEASE_VERSION_MAJOR                                           4
+#define ETH_AR_RELEASE_VERSION_MINOR                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(ETH_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible ETH_AR_RELEASE_MAJOR_VERSION!"
+#if(ETH_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible ETH_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(ETH_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible ETH_AR_RELEASE_MINOR_VERSION!"
+#if(ETH_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible ETH_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -63,8 +63,10 @@ CONSTP2VAR(infSchMClient, ETH_VAR, ETH_CONST) gptrinfSchMClient_Eth = &Eth;
 /******************************************************************************/
 VAR(module_Eth, ETH_VAR) Eth(
    {
-         0x0000
-      ,  0xFFFF
+         ETH_AR_RELEASE_VERSION_MAJOR
+      ,  ETH_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'
