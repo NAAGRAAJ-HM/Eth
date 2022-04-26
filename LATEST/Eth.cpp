@@ -31,8 +31,32 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_Eth_Functionality{
+   public:
+      FUNC(void, ETH_CODE) GetControllerMode       (void);
+      FUNC(void, ETH_CODE) SetControllerMode       (void);
+      FUNC(void, ETH_CODE) GetPhysAddr             (void);
+      FUNC(void, ETH_CODE) SetPhysAddr             (void);
+      FUNC(void, ETH_CODE) UpdatePhysAddrFilter    (void);
+      FUNC(void, ETH_CODE) ReadMii                 (void);
+      FUNC(void, ETH_CODE) WriteMii                (void);
+      FUNC(void, ETH_CODE) GetCounterValues        (void);
+      FUNC(void, ETH_CODE) GetRxStatus             (void);
+      FUNC(void, ETH_CODE) GetTxStatus             (void);
+      FUNC(void, ETH_CODE) GetTxErrorCounterValues (void);
+      FUNC(void, ETH_CODE) GetCurrentTime          (void);
+      FUNC(void, ETH_CODE) EnableEgressTimeStamp   (void);
+      FUNC(void, ETH_CODE) GetEgressTimeStamp      (void);
+      FUNC(void, ETH_CODE) GetIngressTimeStamp     (void);
+      FUNC(void, ETH_CODE) ProvideTxBuffer         (void);
+      FUNC(void, ETH_CODE) Transit                 (void);
+      FUNC(void, ETH_CODE) Recive                  (void);
+      FUNC(void, ETH_CODE) TxConfirmation          (void);
+};
+
 class module_Eth:
       public abstract_module
+   ,  public class_Eth_Functionality
 {
    public:
       module_Eth(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +108,10 @@ FUNC(void, ETH_CODE) module_Eth::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == Eth_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +120,10 @@ FUNC(void, ETH_CODE) module_Eth::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Eth_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +148,10 @@ FUNC(void, ETH_CODE) module_Eth::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Eth_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +168,10 @@ FUNC(void, ETH_CODE) module_Eth::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Eth_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,84 +182,61 @@ FUNC(void, ETH_CODE) module_Eth::MainFunction(void){
 #endif
 }
 
-class class_Eth_Unused{
-   public:
-      FUNC(void, ETH_CODE) GetControllerMode       (void);
-      FUNC(void, ETH_CODE) SetControllerMode       (void);
-      FUNC(void, ETH_CODE) GetPhysAddr             (void);
-      FUNC(void, ETH_CODE) SetPhysAddr             (void);
-      FUNC(void, ETH_CODE) UpdatePhysAddrFilter    (void);
-      FUNC(void, ETH_CODE) ReadMii                 (void);
-      FUNC(void, ETH_CODE) WriteMii                (void);
-      FUNC(void, ETH_CODE) GetCounterValues        (void);
-      FUNC(void, ETH_CODE) GetRxStatus             (void);
-      FUNC(void, ETH_CODE) GetTxStatus             (void);
-      FUNC(void, ETH_CODE) GetTxErrorCounterValues (void);
-      FUNC(void, ETH_CODE) GetCurrentTime          (void);
-      FUNC(void, ETH_CODE) EnableEgressTimeStamp   (void);
-      FUNC(void, ETH_CODE) GetEgressTimeStamp      (void);
-      FUNC(void, ETH_CODE) GetIngressTimeStamp     (void);
-      FUNC(void, ETH_CODE) ProvideTxBuffer         (void);
-      FUNC(void, ETH_CODE) Transit                 (void);
-      FUNC(void, ETH_CODE) Recive                  (void);
-      FUNC(void, ETH_CODE) TxConfirmation          (void);
-};
-
-FUNC(void, ETH_CODE) class_Eth_Unused::GetControllerMode(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::GetControllerMode(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::SetControllerMode(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::SetControllerMode(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::GetPhysAddr(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::GetPhysAddr(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::SetPhysAddr(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::SetPhysAddr(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::UpdatePhysAddrFilter(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::UpdatePhysAddrFilter(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::ReadMii(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::ReadMii(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::WriteMii(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::WriteMii(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::GetCounterValues(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::GetCounterValues(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::GetRxStatus(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::GetRxStatus(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::GetTxStatus(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::GetTxStatus(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::GetTxErrorCounterValues(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::GetTxErrorCounterValues(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::GetCurrentTime(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::GetCurrentTime(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::EnableEgressTimeStamp(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::EnableEgressTimeStamp(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::GetEgressTimeStamp(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::GetEgressTimeStamp(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::GetIngressTimeStamp(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::GetIngressTimeStamp(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::ProvideTxBuffer(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::ProvideTxBuffer(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::Transit(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::Transit(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::Recive(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::Recive(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Unused::TxConfirmation(void){
+FUNC(void, ETH_CODE) class_Eth_Functionality::TxConfirmation(void){
 }
 
 /******************************************************************************/
