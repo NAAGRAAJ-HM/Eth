@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "Eth_core.hpp"
 #include "infEth_EcuM.hpp"
 #include "infEth_Dcm.hpp"
 #include "infEth_SchM.hpp"
