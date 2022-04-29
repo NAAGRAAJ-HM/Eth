@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgEth.hpp"
 #include "Eth_core.hpp"
-#include "infEth_EcuM.hpp"
-#include "infEth_Dcm.hpp"
-#include "infEth_SchM.hpp"
+#include "infEth.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_Eth:
       );
       FUNC(void, ETH_CODE) DeInitFunction (void);
       FUNC(void, ETH_CODE) MainFunction   (void);
+      ETH_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_Eth, ETH_VAR) Eth;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, ETH_VAR, ETH_CONST) gptrinfSchMClient_Eth = &Eth;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgEth.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */

@@ -12,7 +12,7 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define ETH_COREFUNCTIONALITIES                                                \
+#define ETH_CORE_FUNCTIONALITIES                                               \
               FUNC(void, ETH_CODE) GetControllerMode       (void);             \
               FUNC(void, ETH_CODE) SetControllerMode       (void);             \
               FUNC(void, ETH_CODE) GetPhysAddr             (void);             \
@@ -33,7 +33,7 @@
               FUNC(void, ETH_CODE) Recive                  (void);             \
               FUNC(void, ETH_CODE) TxConfirmation          (void);             \
 
-#define ETH_COREFUNCTIONALITIES_VIRTUAL                                        \
+#define ETH_CORE_FUNCTIONALITIES_VIRTUAL                                       \
       virtual FUNC(void, ETH_CODE) GetControllerMode       (void) = 0;         \
       virtual FUNC(void, ETH_CODE) SetControllerMode       (void) = 0;         \
       virtual FUNC(void, ETH_CODE) GetPhysAddr             (void) = 0;         \
@@ -63,7 +63,7 @@
 /******************************************************************************/
 class class_Eth_Functionality{
    public:
-      ETH_COREFUNCTIONALITIES_VIRTUAL
+      ETH_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/
