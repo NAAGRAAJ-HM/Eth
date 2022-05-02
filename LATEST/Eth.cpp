@@ -159,61 +159,61 @@ FUNC(void, ETH_CODE) module_Eth::MainFunction(void){
 #endif
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::GetControllerMode(void){
+FUNC(void, ETH_CODE) module_Eth::GetControllerMode(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::SetControllerMode(void){
+FUNC(void, ETH_CODE) module_Eth::SetControllerMode(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::GetPhysAddr(void){
+FUNC(void, ETH_CODE) module_Eth::GetPhysAddr(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::SetPhysAddr(void){
+FUNC(void, ETH_CODE) module_Eth::SetPhysAddr(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::UpdatePhysAddrFilter(void){
+FUNC(void, ETH_CODE) module_Eth::UpdatePhysAddrFilter(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::ReadMii(void){
+FUNC(void, ETH_CODE) module_Eth::ReadMii(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::WriteMii(void){
+FUNC(void, ETH_CODE) module_Eth::WriteMii(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::GetCounterValues(void){
+FUNC(void, ETH_CODE) module_Eth::GetCounterValues(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::GetRxStatus(void){
+FUNC(void, ETH_CODE) module_Eth::GetRxStatus(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::GetTxStatus(void){
+FUNC(void, ETH_CODE) module_Eth::GetTxStatus(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::GetTxErrorCounterValues(void){
+FUNC(void, ETH_CODE) module_Eth::GetTxErrorCounterValues(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::GetCurrentTime(void){
+FUNC(void, ETH_CODE) module_Eth::GetCurrentTime(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::EnableEgressTimeStamp(void){
+FUNC(void, ETH_CODE) module_Eth::EnableEgressTimeStamp(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::GetEgressTimeStamp(void){
+FUNC(void, ETH_CODE) module_Eth::GetEgressTimeStamp(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::GetIngressTimeStamp(void){
+FUNC(void, ETH_CODE) module_Eth::GetIngressTimeStamp(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::ProvideTxBuffer(void){
+FUNC(void, ETH_CODE) module_Eth::ProvideTxBuffer(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::Transit(void){
+FUNC(void, ETH_CODE) module_Eth::Transit(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::Recive(void){
+FUNC(void, ETH_CODE) module_Eth::Recive(void){
 }
 
-FUNC(void, ETH_CODE) class_Eth_Functionality::TxConfirmation(void){
+FUNC(void, ETH_CODE) module_Eth::TxConfirmation(void){
 }
 
 /******************************************************************************/
