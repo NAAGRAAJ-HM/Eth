@@ -89,7 +89,10 @@ FUNC(void, ETH_CODE) module_Eth::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, ETH_CONFIG_DATA, ETH_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Eth_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, ETH_CODE) module_Eth::InitFunction(
 
 FUNC(void, ETH_CODE) module_Eth::DeInitFunction(void){
 #if(STD_ON == Eth_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Eth_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, ETH_CODE) module_Eth::DeInitFunction(void){
 
 FUNC(void, ETH_CODE) module_Eth::MainFunction(void){
 #if(STD_ON == Eth_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Eth_InitCheck)
    }
