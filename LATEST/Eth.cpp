@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgEth.hpp"
 #include "Eth_core.hpp"
-#include "infEth.hpp"
+#include "infEth_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Eth:
+   INTERFACES_EXPORTED_ETH
       public abstract_module
    ,  public class_Eth_Functionality
 {
