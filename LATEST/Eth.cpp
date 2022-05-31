@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Eth:
-   INTERFACES_EXPORTED_ETH
+      INTERFACES_EXPORTED_ETH
       public abstract_module
    ,  public class_Eth_Functionality
 {
