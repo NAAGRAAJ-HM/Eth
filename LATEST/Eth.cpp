@@ -10,6 +10,7 @@
 #include "CfgEth.hpp"
 #include "Eth_core.hpp"
 #include "infEth_Exp.hpp"
+#include "infEth_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
