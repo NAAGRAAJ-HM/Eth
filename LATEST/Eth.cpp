@@ -74,7 +74,7 @@ CONSTP2VAR(infSchMClient, ETH_VAR, ETH_CONST) gptrinfSchMClient_Eth = &Eth;
 VAR(module_Eth, ETH_VAR) Eth(
    {
 #if(STD_ON == _ReSIM)
-// char strModuleName[6];
+   char strModuleName[6] = "ETH";
 #else
 #endif
          ETH_AR_RELEASE_VERSION_MAJOR
