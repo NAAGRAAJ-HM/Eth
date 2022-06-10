@@ -73,10 +73,6 @@ CONSTP2VAR(infSchMClient, ETH_VAR, ETH_CONST) gptrinfSchMClient_Eth = &Eth;
 /******************************************************************************/
 VAR(module_Eth, ETH_VAR) Eth(
    {
-#if(STD_ON == _ReSIM)
-         "Eth",
-#else
-#endif
          ETH_AR_RELEASE_VERSION_MAJOR
       ,  ETH_AR_RELEASE_VERSION_MINOR
       ,  0x00
