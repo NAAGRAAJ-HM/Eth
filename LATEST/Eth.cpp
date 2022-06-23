@@ -130,7 +130,9 @@ FUNC(void, ETH_CODE) module_Eth::InitFunction(
 #endif
 }
 
-FUNC(void, ETH_CODE) module_Eth::DeInitFunction(void){
+FUNC(void, ETH_CODE) module_Eth::DeInitFunction(
+   void
+){
 #if(STD_ON == Eth_InitCheck)
    if(
          E_OK
@@ -153,7 +155,9 @@ FUNC(void, ETH_CODE) module_Eth::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, ETH_CODE) module_Eth::MainFunction(void){
+FUNC(void, ETH_CODE) module_Eth::MainFunction(
+   void
+){
 #if(STD_ON == Eth_InitCheck)
    if(
          E_OK
@@ -175,61 +179,99 @@ FUNC(void, ETH_CODE) module_Eth::MainFunction(void){
 #endif
 }
 
-FUNC(void, ETH_CODE) module_Eth::GetControllerMode(void){
+FUNC(void, ETH_CODE) module_Eth::GetControllerMode(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::SetControllerMode(void){
+FUNC(void, ETH_CODE) module_Eth::SetControllerMode(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::GetPhysAddr(void){
+FUNC(void, ETH_CODE) module_Eth::GetPhysAddr(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::SetPhysAddr(void){
+FUNC(void, ETH_CODE) module_Eth::SetPhysAddr(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::UpdatePhysAddrFilter(void){
+FUNC(void, ETH_CODE) module_Eth::UpdatePhysAddrFilter(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::ReadMii(void){
+FUNC(void, ETH_CODE) module_Eth::ReadMii(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::WriteMii(void){
+FUNC(void, ETH_CODE) module_Eth::WriteMii(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::GetCounterValues(void){
+FUNC(void, ETH_CODE) module_Eth::GetCounterValues(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::GetRxStatus(void){
+FUNC(void, ETH_CODE) module_Eth::GetRxStatus(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::GetTxStatus(void){
+FUNC(void, ETH_CODE) module_Eth::GetTxStatus(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::GetTxErrorCounterValues(void){
+FUNC(void, ETH_CODE) module_Eth::GetTxErrorCounterValues(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::GetCurrentTime(void){
+FUNC(void, ETH_CODE) module_Eth::GetCurrentTime(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::EnableEgressTimeStamp(void){
+FUNC(void, ETH_CODE) module_Eth::EnableEgressTimeStamp(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::GetEgressTimeStamp(void){
+FUNC(void, ETH_CODE) module_Eth::GetEgressTimeStamp(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::GetIngressTimeStamp(void){
+FUNC(void, ETH_CODE) module_Eth::GetIngressTimeStamp(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::ProvideTxBuffer(void){
+FUNC(void, ETH_CODE) module_Eth::ProvideTxBuffer(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::Transit(void){
+FUNC(void, ETH_CODE) module_Eth::Transit(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::Recive(void){
+FUNC(void, ETH_CODE) module_Eth::Recive(
+   void
+){
 }
 
-FUNC(void, ETH_CODE) module_Eth::TxConfirmation(void){
+FUNC(void, ETH_CODE) module_Eth::TxConfirmation(
+   void
+){
 }
 
 /******************************************************************************/
