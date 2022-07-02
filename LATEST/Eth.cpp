@@ -82,12 +82,7 @@ FUNC(void, ETH_CODE) module_Eth::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgEth;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == Eth_DevErrorDetect)
