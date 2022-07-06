@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgEth.hpp"
-#include "Eth_core.hpp"
-#include "infEth_Exp.hpp"
+#include "Eth.hpp"
 #include "infEth_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_Eth:
-      INTERFACES_EXPORTED_ETH
-      public abstract_module
-   ,  public class_Eth_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, ETH_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, ETH_CONFIG_DATA, ETH_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, ETH_CODE) DeInitFunction (void);
-      FUNC(void, ETH_CODE) MainFunction   (void);
-      ETH_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_Eth, ETH_VAR) Eth;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
