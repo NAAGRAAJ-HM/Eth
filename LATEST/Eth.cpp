@@ -35,8 +35,6 @@
 /* CONSTS                                                                     */
 /******************************************************************************/
 CONSTP2VAR(infEcuMClient, ETH_VAR, ETH_CONST) gptrinfEcuMClient_Eth = &Eth;
-CONSTP2VAR(infDcmClient,  ETH_VAR, ETH_CONST) gptrinfDcmClient_Eth  = &Eth;
-CONSTP2VAR(infSchMClient, ETH_VAR, ETH_CONST) gptrinfSchMClient_Eth = &Eth;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
