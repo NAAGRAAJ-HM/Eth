@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstEth.hpp"
 #include "CfgEth.hpp"
 #include "Eth_core.hpp"
 #include "infEth_Exp.hpp"
@@ -31,13 +32,15 @@ class module_Eth:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstEth_Type* lptrConst = (ConstEth_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, ETH_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, ETH_CONFIG_DATA, ETH_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, ETH_CONST,       ETH_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   ETH_CONFIG_DATA, ETH_APPL_CONST) lptrCfgModule
       );
       FUNC(void, ETH_CODE) DeInitFunction (void);
       FUNC(void, ETH_CODE) MainFunction   (void);

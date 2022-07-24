@@ -48,7 +48,8 @@ VAR(module_Eth, ETH_VAR) Eth;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, ETH_CODE) module_Eth::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, ETH_CONFIG_DATA, ETH_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, ETH_CONST,       ETH_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   ETH_CONFIG_DATA, ETH_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Eth_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, ETH_CODE) module_Eth::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == Eth_DevErrorDetect)
