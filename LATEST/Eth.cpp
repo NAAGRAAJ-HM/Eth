@@ -61,7 +61,7 @@ FUNC(void, ETH_CODE) module_Eth::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstEth_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
