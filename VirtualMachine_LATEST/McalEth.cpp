@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define ETH_AR_RELEASE_VERSION_MAJOR                                           4
-#define ETH_AR_RELEASE_VERSION_MINOR                                           3
+#define MCALETH_AR_RELEASE_VERSION_MAJOR                                           4
+#define MCALETH_AR_RELEASE_VERSION_MINOR                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(ETH_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible ETH_AR_RELEASE_VERSION_MAJOR!"
+#if(MCALETH_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible MCALETH_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(ETH_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible ETH_AR_RELEASE_VERSION_MINOR!"
+#if(MCALETH_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible MCALETH_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_McalEth, ETH_VAR) McalEth;
+VAR(module_McalEth, MCALETH_VAR) McalEth;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, ETH_CODE) module_McalEth::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, ETH_CONST,       ETH_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   ETH_CONFIG_DATA, ETH_APPL_CONST) lptrCfgModule
+FUNC(void, MCALETH_CODE) module_McalEth::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, MCALETH_CONST,       MCALETH_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALETH_CONFIG_DATA, MCALETH_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == McalEth_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, ETH_CODE) module_McalEth::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  ETH_E_UNINIT
+         ,  MCALETH_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, ETH_CODE) module_McalEth::DeInitFunction(
+FUNC(void, MCALETH_CODE) module_McalEth::DeInitFunction(
    void
 ){
 #if(STD_ON == McalEth_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, ETH_CODE) module_McalEth::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  ETH_E_UNINIT
+         ,  MCALETH_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, ETH_CODE) module_McalEth::MainFunction(
+FUNC(void, MCALETH_CODE) module_McalEth::MainFunction(
    void
 ){
 #if(STD_ON == McalEth_InitCheck)
@@ -132,104 +132,104 @@ FUNC(void, ETH_CODE) module_McalEth::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  ETH_E_UNINIT
+         ,  MCALETH_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, ETH_CODE) module_McalEth::GetControllerMode(
+FUNC(void, MCALETH_CODE) module_McalEth::GetControllerMode(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::SetControllerMode(
+FUNC(void, MCALETH_CODE) module_McalEth::SetControllerMode(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::GetPhysAddr(
+FUNC(void, MCALETH_CODE) module_McalEth::GetPhysAddr(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::SetPhysAddr(
+FUNC(void, MCALETH_CODE) module_McalEth::SetPhysAddr(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::UpdatePhysAddrFilter(
+FUNC(void, MCALETH_CODE) module_McalEth::UpdatePhysAddrFilter(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::ReadMii(
+FUNC(void, MCALETH_CODE) module_McalEth::ReadMii(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::WriteMii(
+FUNC(void, MCALETH_CODE) module_McalEth::WriteMii(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::GetCounterValues(
+FUNC(void, MCALETH_CODE) module_McalEth::GetCounterValues(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::GetRxStatus(
+FUNC(void, MCALETH_CODE) module_McalEth::GetRxStatus(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::GetTxStatus(
+FUNC(void, MCALETH_CODE) module_McalEth::GetTxStatus(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::GetTxErrorCounterValues(
+FUNC(void, MCALETH_CODE) module_McalEth::GetTxErrorCounterValues(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::GetCurrentTime(
+FUNC(void, MCALETH_CODE) module_McalEth::GetCurrentTime(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::EnableEgressTimeStamp(
+FUNC(void, MCALETH_CODE) module_McalEth::EnableEgressTimeStamp(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::GetEgressTimeStamp(
+FUNC(void, MCALETH_CODE) module_McalEth::GetEgressTimeStamp(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::GetIngressTimeStamp(
+FUNC(void, MCALETH_CODE) module_McalEth::GetIngressTimeStamp(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::ProvideTxBuffer(
+FUNC(void, MCALETH_CODE) module_McalEth::ProvideTxBuffer(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::Transit(
+FUNC(void, MCALETH_CODE) module_McalEth::Transit(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::Recive(
+FUNC(void, MCALETH_CODE) module_McalEth::Recive(
    void
 ){
 }
 
-FUNC(void, ETH_CODE) module_McalEth::TxConfirmation(
+FUNC(void, MCALETH_CODE) module_McalEth::TxConfirmation(
    void
 ){
 }

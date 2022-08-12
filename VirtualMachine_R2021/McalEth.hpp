@@ -1,13 +1,16 @@
 #pragma once
 /******************************************************************************/
-/* File   : infMcalEth_ServiceDet.hpp                                                    */
+/* File   : McalEth.hpp                                                           */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CompilerCfg_McalEth.hpp"
+#include "ConstMcalEth.hpp"
+#include "CfgMcalEth.hpp"
+#include "McalEth_core.hpp"
+#include "infMcalEth_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -20,9 +23,29 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-typedef enum{
-      MCALETH_E_UNINIT
-}McalEth_TypeServiceDetErrorCode;
+class module_McalEth:
+      INTERFACES_EXPORTED_ETH
+      public abstract_module
+   ,  public class_McalEth_Functionality
+{
+   private:
+/******************************************************************************/
+/* OBJECTS                                                                    */
+/******************************************************************************/
+      const ConstMcalEth_Type* lptrConst = (ConstMcalEth_Type*)NULL_PTR;
+
+   public:
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
+      FUNC(void, ETH_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, ETH_CONST,       ETH_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   ETH_CONFIG_DATA, ETH_APPL_CONST) lptrCfgModule
+      );
+      FUNC(void, ETH_CODE) DeInitFunction (void);
+      FUNC(void, ETH_CODE) MainFunction   (void);
+      ETH_CORE_FUNCTIONALITIES
+};
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -35,10 +58,7 @@ typedef enum{
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
+extern VAR(module_McalEth, ETH_VAR) McalEth;
 
 /******************************************************************************/
 /* EOF                                                                        */

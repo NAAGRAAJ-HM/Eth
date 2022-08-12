@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_McalEth:
-      INTERFACES_EXPORTED_ETH
+      INTERFACES_EXPORTED_MCALETH
       public abstract_module
    ,  public class_McalEth_Functionality
 {
@@ -38,13 +38,13 @@ class module_McalEth:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, ETH_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, ETH_CONST,       ETH_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   ETH_CONFIG_DATA, ETH_APPL_CONST) lptrCfgModule
+      FUNC(void, MCALETH_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, MCALETH_CONST,       MCALETH_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALETH_CONFIG_DATA, MCALETH_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, ETH_CODE) DeInitFunction (void);
-      FUNC(void, ETH_CODE) MainFunction   (void);
-      ETH_CORE_FUNCTIONALITIES
+      FUNC(void, MCALETH_CODE) DeInitFunction (void);
+      FUNC(void, MCALETH_CODE) MainFunction   (void);
+      MCALETH_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -58,7 +58,7 @@ class module_McalEth:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_McalEth, ETH_VAR) McalEth;
+extern VAR(module_McalEth, MCALETH_VAR) McalEth;
 
 /******************************************************************************/
 /* EOF                                                                        */
