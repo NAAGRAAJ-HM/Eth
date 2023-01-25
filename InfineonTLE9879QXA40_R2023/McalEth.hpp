@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalEth.hpp                                                           */
+/* File   : McalEth.hpp                                                       */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalEth.hpp"
+#include "infMcalEth_ServiceNvM_Types.hpp"
 #include "CfgMcalEth.hpp"
 #include "McalEth_core.hpp"
 #include "infMcalEth_Exp.hpp"
