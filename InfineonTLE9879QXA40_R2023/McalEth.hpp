@@ -32,14 +32,14 @@ class module_McalEth:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-      const ConstMcalEth_Type* lptrConst = (ConstMcalEth_Type*)NULL_PTR;
+      const ConstModule_TypeAbstract* lptrNvMBlocksRom = (ConstModule_TypeAbstract*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, MCALETH_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, MCALETH_CONST,       MCALETH_APPL_CONST) lptrConstModule
+            CONSTP2CONST(ConstModule_TypeAbstract, MCALETH_CONST,       MCALETH_APPL_CONST) lptrNvMBlocksRomModule
          ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALETH_CONFIG_DATA, MCALETH_APPL_CONST) lptrCfgModule
       );
       FUNC(void, MCALETH_CODE) DeInitFunction (void);
